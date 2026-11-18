@@ -1,0 +1,54 @@
+
+/* ===== 처단형 Drill — 판례집 미니멀 규칙을 따름: 상자 없이 선, 컨트롤은 글자, 강조색은 정답·선택에만 ===== */
+#drill [hidden]{display:none!important}
+.dr-wrap{max-width:720px;margin:0 auto;padding:12px 0 60px;display:flex;flex-direction:column;gap:14px}
+.dr-pre{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--muted)}
+.dr-pre li{padding-left:14px;position:relative}
+.dr-pre li::before{content:"";position:absolute;left:0;top:.8em;width:5px;height:1px;background:var(--faint)}
+.dr-list .fc-tile{grid-template-columns:40px 1fr auto}
+.dr-list .fc-tile .ct.ng{color:var(--accent)}
+.dr-sheet{display:flex;flex-direction:column;gap:0}
+.dr-block{border-top:1px solid var(--line);padding:24px 0}
+.dr-block h3{font-family:var(--display);font-size:15px;font-weight:600;color:var(--ink);margin:0 0 10px}
+.dr-kv{display:grid;grid-template-columns:4.5em 1fr;gap:4px 12px;font-size:15px;line-height:1.7;margin:0}
+.dr-kv dt{color:var(--faint);font-size:13px;padding-top:2px}
+.dr-kv dd{margin:0;color:var(--ink-2)}
+.dr-facts{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.dr-facts li{display:grid;grid-template-columns:1.6em 1fr;gap:0 6px;font-size:16px;line-height:1.75;color:var(--ink-2)}
+.dr-facts .k{color:var(--faint)}
+.dr-facts .d{display:block;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.dr-step{padding:16px 0;border-top:1px solid var(--line)}
+.dr-step:first-child{border-top:0;padding-top:4px}
+.dr-step h4{margin:0 0 6px;font-size:14px;font-weight:600;color:var(--ink)}
+.dr-step h4 small{font-weight:400;color:var(--faint);font-size:12px;margin-left:8px}
+.dr-sent{font-size:15.5px;line-height:2.3;color:var(--ink-2);word-break:keep-all}
+.dr-law{color:var(--muted)}
+.dr-b{display:inline-flex;align-items:baseline;gap:4px;vertical-align:baseline;max-width:100%}
+.dr-n{font:inherit;font-size:13px;color:var(--faint);background:none;border:0;padding:0 2px;cursor:pointer;line-height:1}
+@media (hover:hover){.dr-n:hover{color:var(--ink)}}
+.dr-in{font:inherit;font-size:15px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--faint);border-radius:0;padding:0 2px;min-width:7em;max-width:100%;width:7em}
+.dr-in:focus-visible{outline:none;border-bottom-color:var(--ink)}
+.dr-in::placeholder{color:var(--faint)}
+.dr-a{display:none;color:var(--accent);font-weight:600}
+.dr-b.show .dr-a{display:inline}
+.dr-b.show.hit .dr-a{color:var(--ink)}
+.dr-b.show.hit .dr-a::after{content:" ✓";color:var(--muted);font-weight:400}
+.dr-b.show .dr-in{border-bottom-style:dashed;color:var(--muted)}
+.dr-b.show.hit .dr-in{display:none}
+.dr-b.show .dr-in:placeholder-shown{display:none}
+.dr-final .dr-in{width:100%;min-width:0}
+.dr-final .dr-b{display:flex;flex-direction:column;gap:6px;width:100%}
+.dr-tbl{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
+.dr-tbl th{font-weight:400;color:var(--faint);text-align:left;padding:0 10px 6px 0;font-size:12px;border-bottom:1px solid var(--line)}
+.dr-tbl td{padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+.dr-tbl td:first-child{color:var(--ink);font-weight:500}
+.dr-tbl td:last-child{white-space:nowrap;padding-right:0}
+.dr-notes{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.7;color:var(--ink-2)}
+.dr-notes li{padding-left:14px;position:relative}
+.dr-notes li::before{content:"";position:absolute;left:0;top:.85em;width:5px;height:1px;background:var(--faint)}
+.dr-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.dr-actions .ox-btn{flex:1 1 200px}
+.dr-mark{font-size:12px;color:var(--faint)}
+.dr-mark.k{color:var(--muted)}.dr-mark.u{color:var(--accent)}
+@media (max-width:520px){.dr-kv{grid-template-columns:1fr}.dr-kv dt{padding-top:6px}.dr-tbl th:nth-child(2),.dr-tbl td:nth-child(2){display:none}}
+.dr-in.auto{color:var(--muted)}
