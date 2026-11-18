@@ -1,0 +1,37 @@
+/* ===== 전문증거 Drill — 처단형 Drill(drill.css)과 같은 규칙: 상자 없이 선, 컨트롤은 글자, 강조색은 정답·선택에만 ===== */
+#hearsay [hidden]{display:none!important}
+.hs-q{border:0;padding:16px 0;margin:0;min-width:0;border-top:1px solid var(--line)}
+.hs-q[disabled] h4,.hs-q[disabled] .hs-opts,.hs-q[disabled] .dr-sent{opacity:.4}
+.hs-q[disabled] h4::after{content:" — 비진술증거는 답하지 않음";font-weight:400;font-size:12px;color:var(--muted)}
+.hs-opts{display:flex;flex-wrap:wrap;gap:4px 20px}
+.hs-opts .fc-chip{font-size:14px!important}
+.hs-opts .fc-chip.fix{color:var(--ink)!important;cursor:default}
+.hs-opts .fc-chip.fix::before{visibility:visible}
+/* 맞힌 선택은 잉크색(다크 모드에서 흰색), 틀렸을 때만 정답을 강조색으로 */
+.hs-opts .fc-chip.hit,.hs-why-form .fc-chip.hit{color:var(--ink)!important;font-weight:600}
+.hs-opts .fc-chip.right,.hs-why-form .fc-chip.right{color:var(--accent)!important}
+.hs-opts .fc-chip.wrong,.hs-why-form .fc-chip.wrong{text-decoration:line-through!important;text-decoration-thickness:1px!important}
+.hs-why-form{display:inline-flex;flex-wrap:wrap;gap:0 14px;vertical-align:baseline}
+.hs-why-form .fc-chip{min-height:0!important;padding:0!important;font-size:15px!important}
+.hs-why-tail{color:var(--muted);font-size:14px}
+.hs-res{margin:8px 0 0;font-size:13px;color:var(--ink)}
+.hs-res.ng{color:var(--accent)}
+.hs-cases{margin:14px 0 0;font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px}
+.hs-cases a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.hs-ev{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink)}
+.hs-ev small{display:block;font-size:12px;color:var(--muted);margin-bottom:2px}
+#hs-ans dd b{font-weight:600;color:var(--ink)}
+#hs-grade .fc-btn.sug{font-weight:600!important;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.hs-who{gap:0 12px}
+#hs-why{line-height:2.4}
+.hs-why-form .fc-chip[aria-pressed="false"]::before{display:none}
+.hs-hint{display:block;margin-top:8px;font-size:12px;line-height:1.6;color:var(--muted)}
+.hs-row{display:grid;grid-template-columns:6.5em 1fr;gap:4px 10px;align-items:baseline;padding:6px 0}
+.hs-lab{font-size:13px;color:var(--muted)}
+.hs-row .hs-why-form{display:flex;flex-wrap:wrap;gap:2px 16px}
+.hs-row .hs-why-form .fc-chip{font-size:14px!important;min-height:30px!important}
+.hs-prev{margin:10px 0 0;font-size:15px;color:var(--ink);line-height:1.7}
+#hs-why{line-height:1.6}
+@media (max-width:520px){.hs-row{grid-template-columns:1fr}.hs-lab{font-size:12px}}
+.hs-why-form .fc-chip.fix{color:var(--ink)!important;cursor:default}
+.hs-why-form .fc-chip.fix::before{display:inline-block!important;visibility:visible}
